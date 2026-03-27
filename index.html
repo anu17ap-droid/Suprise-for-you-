@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>💖 Surprise 💖</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial;
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        color: #fff;
+        padding-top: 50px;
+    }
+    input, select, button {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 16px;
+    }
+    button {
+        background-color: #ff4d6d;
+        color: white;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>✨ Special Surprise ✨</h1>
+
+<p>Hello 😊 What's your name?</p>
+<input type="text" id="name" placeholder="Enter your name">
+
+<br>
+
+<p>Select your gender:</p>
+<select id="gender">
+    <option value="">--Choose--</option>
+    <option value="boy">Boy</option>
+    <option value="girl">Girl</option>
+</select>
+
+<br>
+
+<button onclick="showSurprise()">Show My Surprise 💙</button>
+
+<div id="result"></div>
+
+<script>
+function showSurprise() {
+    var name = document.getElementById("name").value;
+    var gender = document.getElementById("gender").value;
+
+    if(name === "" || gender === "") {
+        alert("Please enter name and select gender 😊");
+        return;
+    }
+
+    var letter = name.charAt(0).toUpperCase();
+
+    var nicknamesBoy = {
+        A:"Awesome King 👑", B:"Brave Hero 💪", C:"Cool Champ 😎",
+        D:"Dashing Dude 🔥", E:"Energetic Star ⭐", F:"Fearless Soul 🦁",
+        G:"Gentleman 💼", H:"Handsome Prince 🤴", I:"Intelligent Mind 🧠",
+        J:"Jolly Buddy 😄", K:"Kind Heart 💖", L:"Legend 🔥",
+        M:"Mastermind 🧠", N:"Noble Guy 👑", O:"Outstanding Hero 🌟",
+        P:"Powerful King 💪", Q:"Quick Thinker ⚡", R:"Rockstar 🎸",
+        S:"Sweet Bro 💙", T:"Talented Star 🌟", U:"Unique Soul 💫",
+        V:"Victory Man 🏆", W:"Wise Guy 🧠", X:"Xtra Special 😎",
+        Y:"Young King 👑", Z:"Zesty Champ ⚡"
+    };
+
+    var nicknamesGirl = {
+        A:"Awesome Angel 😇", B:"Beautiful Queen 👑", C:"Charming Princess 👸",
+        D:"Darling Soul 💖", E:"Elegant Beauty 🌸", F:"Fairy Queen 🧚",
+        G:"Gorgeous Diva 💃", H:"Heavenly Angel 😇", I:"Innocent Heart 💕",
+        J:"Joyful Soul 😊", K:"Kind Princess 👸", L:"Lovely Queen 💖",
+        M:"Magic Girl ✨", N:"Nice Soul 💕", O:"Outstanding Beauty 🌟",
+        P:"Pretty Princess 👑", Q:"Queen 👸", R:"Radiant Beauty 🌸",
+        S:"Sweety 💕", T:"True Angel 😇", U:"Unique Beauty 💫",
+        V:"Vibrant Girl 🌈", W:"Wonderful Soul 💖", X:"Xoxo Queen 💋",
+        Y:"Young Princess 👸", Z:"Zingy Beauty ⚡"
+    };
+
+    var compliments = {
+        A:"You are Awesome 🌟", B:"You are Brilliant ✨", C:"You are Confident 💫",
+        D:"You are Delightful 😊", E:"You are Extraordinary 🔥", F:"You are Fantastic 😍",
+        G:"You are Gorgeous 💖", H:"You are Honest 💫", I:"You are Incredible 😍",
+        J:"You are Joyful 😊", K:"You are Kind 💖", L:"You are Lovely 💕",
+        M:"You are Magical ✨", N:"You are Nice 😊", O:"You are Outstanding 🌟",
+        P:"You are Perfect 💖", Q:"You are Queen 👑", R:"You are Radiant 🌸",
+        S:"You are Special 💙", T:"You are Talented 🌟", U:"You are Unique 💫",
+        V:"You are Valuable 💎", W:"You are Wonderful 💖", X:"You are Xtra Amazing 😍",
+        Y:"You are Youthful 🌈", Z:"You are Zealous ⚡"
+    };
+
+    var nickname = (gender === "boy") ? nicknamesBoy[letter] : nicknamesGirl[letter];
+    var compliment = compliments[letter];
+
+    document.getElementById("result").innerHTML =
+        "💙 Hey " + name + "<br><br>" +
+        "Your Nickname: " + (nickname || "Super Star 😎") + "<br>" +
+        (compliment || "You are Amazing 💫") +
+        "<br><br>✨ Hope you liked this surprise ✨";
+}
+</script>
+
+</body>
+</html>
