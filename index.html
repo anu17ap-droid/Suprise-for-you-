@@ -46,6 +46,8 @@
 <br>
 
 <button onclick="showSurprise()">Show My Surprise 💙</button>
+    <br><br>
+<button onclick="openForm()">Send Me Your Answer 💌</button>
 
 <div id="result"></div>
 
@@ -57,6 +59,9 @@ function showSurprise() {
     if(name === "" || gender === "") {
         alert("Please enter name and select gender 😊");
         return;
+    }
+    function openForm() {
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSf7YjzeqRV0YHXiy9opTd4l-y6bJ4mjINbdDgYiLHFMOp5MMw/viewform?usp=dialog");
     }
 
     var letter = name.charAt(0).toUpperCase();
