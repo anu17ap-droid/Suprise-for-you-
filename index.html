@@ -36,8 +36,6 @@
 <p>Hello 😊 What's your name?</p>
 <input type="text" id="name" placeholder="Enter your name">
 
-<br>
-
 <p>Select your gender:</p>
 <select id="gender">
     <option value="">--Choose--</option>
@@ -45,11 +43,21 @@
     <option value="girl">Girl</option>
 </select>
 
-<br>
-
 <button onclick="showSurprise()">Show My Surprise 💙</button>
 
 <div id="result"></div>
+
+<!-- NEW PART -->
+<div id="extra" style="display:none;">
+    <p>💬 How is it? 😊</p>
+    <input type="text" id="feedback" placeholder="Type your answer">
+
+    <p>💡 Suggest one nickname for me 😄</p>
+    <input type="text" id="suggestion" placeholder="Your nickname idea">
+
+    <br>
+    <button onclick="finalMessage()">Submit 💖</button>
+</div>
 
 <script>
 function showSurprise() {
@@ -107,8 +115,21 @@ function showSurprise() {
         "Your Nickname: " + (nickname || "Super Star 😎") + "<br>" +
         (compliment || "You are Amazing 💫") +
         "<br><br>✨ Hope you liked this surprise ✨";
+
+    document.getElementById("extra").style.display = "block";
+}
+
+function finalMessage() {
+    var feedback = document.getElementById("feedback").value;
+    var suggestion = document.getElementById("suggestion").value;
+
+    document.getElementById("result").innerHTML +=
+        "<br><br>💬 You said: " + feedback +
+        "<br>💡 Your nickname for me: " + suggestion +
+        "<br><br>💖 Thank you for trying this 💖";
 }
 </script>
 
 </body>
 </html>
+        
